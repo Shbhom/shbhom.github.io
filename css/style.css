@@ -121,7 +121,7 @@ nav {
   padding-left: 5rem;
   padding-top: 4rem;
   padding-bottom: 2rem;
-  padding-right: 3rem;
+  padding-right: 5rem;
 }
 
 nav h1 a {
@@ -194,9 +194,11 @@ footer h2{
 
 @media (min-width: 850px) {
   nav {
+    max-width: 1275px;
     margin: 0 auto;
   }
   #intro{
+    max-width: 1275px;
     margin: 0 auto;
   } 
   nav li:first-child {
