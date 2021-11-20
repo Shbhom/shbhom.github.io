@@ -49,7 +49,6 @@ a:hover {
 
 /* intro styles */
 #intro {
-  padding: 5rem;
   padding-bottom: 10rem;
 }
 
@@ -194,6 +193,10 @@ footer h2{
     max-width: 1200px;
     margin: 0 auto;
   }
+  #intro{
+    max-width: 1200px;
+    margin: 0 auto;
+  } 
   nav li:first-child {
     flex-basis: auto;
     text-align: left;
