@@ -165,7 +165,6 @@ nav [class*="fa-"]:hover {
   color: white;
   padding: 0.5rem;
   border-radius: 5px;
-  margin-top: 10px;
 }
 
 .button:hover {
