@@ -1,19 +1,16 @@
 author:
-  name: Dasein
-  role: PhD in Philosophy
-  bio:  Known for contributions to phenomenology, hermeneutics, and existentialism.
-  location: Munich, Germany
+  name: Shubhom Srivastava
+  role: Backend Engineer @ Hornet
+  bio: Backend Engineer specializing in distributed systems and high-throughput event-driven architectures.
+  location: Delhi, India
 
 social:
-  - id: "x"
-    label: "X"
-    href: "#_"
   - id: "github"
     label: "GitHub"
-    href: "https://github.com/roicort"
+    href: "https://github.com/Shbhom"
   - id: "linkedin"
     label: "Linkedin"
-    href: "#_"
+    href: "https://linkedin.com/in/shubhom-srivastava"
   - id: "email"
     label: "Email"
-    href: "mailto:"
+    href: "mailto:shbhomsrivastav@gmail.com"

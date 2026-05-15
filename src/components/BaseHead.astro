@@ -15,7 +15,9 @@ interface Props {
 	image?: ImageMetadata;
 }
 
-const { title, description, image = FallbackImage } = Astro.props;
+const { title, description = "Backend Engineer specializing in distributed systems and high-throughput event-driven architectures.", image = FallbackImage } = Astro.props;
+
+const formattedTitle = title === site.author.name || !title ? "Shubhom Srivastava | Portfolio" : `${title} | Shubhom Srivastava`;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL((image as ImageMetadata).src, Astro.site ?? Astro.url);
@@ -23,27 +25,27 @@ const imageURL = new URL((image as ImageMetadata).src, Astro.site ?? Astro.url);
 
 <SEO
 	charset="utf-8"
-	title={title}
+	title={formattedTitle}
 	description={description}
 	canonical={canonicalURL.toString()}
 	openGraph={{
 		basic: {
-			title,
+			title: formattedTitle,
 			type: 'website',
 			image: imageURL.toString(),
 			url: canonicalURL.toString(),
 		},
 		optional: {
 			description,
-			siteName: site.author.name || 'Dasein',
+			siteName: 'Shubhom Srivastava | Portfolio',
 		},
 	}}
 	twitter={{
 		card: 'summary_large_image',
-		title,
+		title: formattedTitle,
 		description,
 		image: imageURL.toString(),
-		imageAlt: title,
+		imageAlt: formattedTitle,
 	}}
 		extend={{
 		link: [
