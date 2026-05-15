@@ -1,10 +1,3 @@
-- id: "education"
-  heading: "Education"
-  items:
-    - title: "B.Tech in Computer Science & Engineering — KIIT University"
-      description: "GPA: 8.1/10. Coursework: Computer Networks, Operating Systems, Database Management Systems, Software Engineering, Data Structures and Algorithms, Compiler Design, Cloud Computing, Probability and Statistics."
-      datetime: "Oct 2021 – July 2025"
-
 - id: "experience"
   heading: "Experience"
   items:
@@ -46,3 +39,10 @@
       description: "PostgreSQL, MongoDB, Redis, Pinecone, ChromaDB"
     - title: "Auth & Security"
       description: "JWT, OAuth, HMAC Keys, Magic Link"
+
+- id: "education"
+  heading: "Education"
+  items:
+    - title: "B.Tech in Computer Science & Engineering — KIIT University"
+      description: "GPA: 8.1/10. Coursework: Computer Networks, Operating Systems, Database Management Systems, Software Engineering, Data Structures and Algorithms, Compiler Design, Cloud Computing, Probability and Statistics."
+      datetime: "Oct 2021 – July 2025"

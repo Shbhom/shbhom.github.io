@@ -29,21 +29,7 @@ const site = await getSite();
 
 	<Social class="mt-8" />
 
-	<ProjectList
-		heading="Projects"
-		limit={4}
-		viewAllHref="/projects"
-	/>
-
-	{/* Blog section hidden — uncomment when blog posts are added
-	<PostList
-		heading="Blog"
-		limit={3}
-		viewAllHref="/blog"
-	/>
-	*/}
-
-	            <!-- Sections (from src/content/sections.yml) -->
+	            <!-- Sections (from src/content/cv.yml) -->
             {
                 cv.map((section) => {
                     if (section.data.items) {
@@ -57,5 +43,19 @@ const site = await getSite();
                     return null;
                 })
             }
+
+	<ProjectList
+		heading="Projects"
+		limit={4}
+		viewAllHref="/projects"
+	/>
+
+	{/* Blog section hidden — uncomment when blog posts are added
+	<PostList
+		heading="Blog"
+		limit={3}
+		viewAllHref="/blog"
+	/>
+	*/}
 		
 </PageLayout>
