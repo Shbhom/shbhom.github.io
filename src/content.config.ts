@@ -50,6 +50,7 @@ const cv = defineCollection({
         z.object({
           title: z.string(),
           description: z.string().optional(),
+          bullets: z.array(z.string()).optional(),
           datetime: z.string().optional(),
           href: z.string().optional(),
         }),

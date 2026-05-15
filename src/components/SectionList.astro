@@ -19,6 +19,7 @@
 interface Item {
     title: string;
     description?: string;
+    bullets?: string[];
     datetime?: string;
     dateLabel?: string;
     href?: string;
@@ -90,6 +91,13 @@ function isExternal(href: string) {
                                     <p class="text-xs 2xl:text-lg mt-1 text-base-600">
                                         {item.description}
                                     </p>
+                                )}
+                                {item.bullets && item.bullets.length > 0 && (
+                                    <ul class="text-xs 2xl:text-lg mt-1 text-base-600 list-disc list-inside space-y-1">
+                                        {item.bullets.map((bullet) => (
+                                            <li>{bullet}</li>
+                                        ))}
+                                    </ul>
                                 )}
                             </div>
 
