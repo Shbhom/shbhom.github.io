@@ -30,9 +30,9 @@ const site = await getSite();
 
 	<Social class="mt-8" />
 
-	            <!-- Sections (from src/content/cv.yml) -->
+	            <!-- Experience & Skills -->
             {
-                cv.map((section) => {
+                cv.filter(s => s.data.id === 'experience' || s.data.id === 'skills').map((section) => {
                     if (section.data.items) {
                         return (
                             <SectionList
@@ -50,6 +50,21 @@ const site = await getSite();
 		limit={4}
 		viewAllHref="/projects"
 	/>
+
+	            <!-- Education -->
+            {
+                cv.filter(s => s.data.id === 'education').map((section) => {
+                    if (section.data.items) {
+                        return (
+                            <SectionList
+                                heading={section.data.heading}
+                                items={section.data.items}
+                            />
+                        );
+                    }
+                    return null;
+                })
+            }
 
 	{/* TODO: Add blog posts and uncomment this section */}
 	{/* Blog section hidden — uncomment when blog posts are added
