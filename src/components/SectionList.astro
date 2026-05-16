@@ -42,13 +42,13 @@ function isExternal(href: string) {
 ---
 
 <section>
-    <div class="max-w-[90rem] mx-auto px-8">
+    <div class="max-w-[120rem] mx-auto px-8">
         <div
             class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200"
         >
             <div class="lg:sticky lg:top-24 lg:z-40 self-start">
                 <h2
-                    class="text-sm 2xl:text-xl text-base-900 font-bold uppercase"
+                    class="text-base 2xl:text-2xl text-base-900 font-bold uppercase"
                 >
                     {heading}
                 </h2>
@@ -59,7 +59,7 @@ function isExternal(href: string) {
                     items.map((item) => (
                         <article class="group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start">
                             <div class="lg:col-span-2">
-                                <h3 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">
+                                <h3 class="text-base 2xl:text-2xl text-base-900 font-bold uppercase">
                                     {item.href ? (
                                         <a
                                             href={item.href}
@@ -88,19 +88,19 @@ function isExternal(href: string) {
                                     )}
                                 </h3>
                                 {item.datetime && (
-                                    <p class="text-xs 2xl:text-lg text-base-600 mt-1 mb-2 lg:hidden">
+                                    <p class="text-sm 2xl:text-xl text-base-600 mt-1 mb-2 lg:hidden">
                                         <time datetime={item.datetime}>
                                             {item.dateLabel ?? item.datetime}
                                         </time>
                                     </p>
                                 )}
                                 {item.description && (
-                                    <p class="text-xs 2xl:text-lg mt-1 text-base-600">
+                                    <p class="text-sm 2xl:text-xl mt-1 text-base-600">
                                         {item.description}
                                     </p>
                                 )}
                                 {item.bullets && item.bullets.length > 0 && (
-                                    <ul class="text-xs 2xl:text-lg mt-1 text-base-600 list-disc list-inside space-y-1">
+                                    <ul class="text-sm 2xl:text-xl mt-1 text-base-600 list-disc list-inside space-y-1">
                                         {item.bullets.map((bullet) => (
                                             <li>{bullet}</li>
                                         ))}
@@ -109,7 +109,7 @@ function isExternal(href: string) {
                             </div>
 
                             {item.datetime && (
-                                <p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto hidden lg:block">
+                                <p class="text-sm 2xl:text-xl text-base-600 lg:ml-auto hidden lg:block">
                                     <time datetime={item.datetime}>
                                         {item.dateLabel ?? item.datetime}
                                     </time>
