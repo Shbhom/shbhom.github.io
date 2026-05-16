@@ -35,7 +35,16 @@ const { title, description, actions = [], role, location } = Astro.props as Prop
   <div class="max-w-360 mx-auto px-8 w-full mt-auto">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pb-8 border-base-200">
       <div>
-        {role && <h1 class="text-xs 2xl:text-lg text-base-900 font-bold uppercase">{role}</h1>}
+        {role && <h1 class="text-xs 2xl:text-lg text-base-900 font-bold uppercase">{
+        role.split('Hornet').map((part, i, arr) => (
+          <>
+            {part}
+            {i < arr.length - 1 && (
+              <a href="https://www.linkedin.com/company/hornet-official/" target="_blank" rel="noopener noreferrer" class="text-base-900 hover:text-base-500 transition-colors">Hornet</a>
+            )}
+          </>
+        ))
+      }</h1>}
       </div>
 
       <div class="md:col-span-1">
