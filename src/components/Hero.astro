@@ -44,9 +44,9 @@ const { title, description, actions = [], role, location } = Astro.props as Prop
   </div>
 
   <div class="max-w-[120rem] mx-auto px-8 w-full mt-auto">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pb-8 border-base-200">
-      <div>
-        {role && <h1 class="text-sm 2xl:text-xl text-base-900 font-bold uppercase">{
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-4 border-b pb-8 border-base-200">
+      <div class="md:col-span-1">
+        {role && <h1 class="text-xs 2xl:text-lg text-base-900 font-bold uppercase">{
         role.split('Hornet').map((part, i, arr) => (
           <>
             {part}
@@ -58,9 +58,9 @@ const { title, description, actions = [], role, location } = Astro.props as Prop
       }</h1>}
       </div>
 
-      <div class="md:col-span-1">
-        {description && <p class="text-base 2xl:text-2xl text-base-600">{description}</p>}
-        {location && <p class="text-sm 2xl:text-xl text-base-600 mt-2">{location}</p>}
+      <div class="md:col-span-2">
+        {description && <p class="text-sm 2xl:text-xl text-base-600">{description}</p>}
+        {location && <p class="text-sm text-base-600 mt-2">{location}</p>}
       </div>
 
       <div class="md:col-span-1 flex items-start md:justify-end">
@@ -69,7 +69,7 @@ const { title, description, actions = [], role, location } = Astro.props as Prop
             {actions.map((action) => (
               isExternal(action.href) ? (
                 <a
-                  class="text-sm 2xl:text-xl text-base-900 hover:text-base-500 font-bold uppercase inline-block px-4 py-2"
+                  class="text-xs 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase inline-block px-4 py-2"
                   href={action.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -78,7 +78,7 @@ const { title, description, actions = [], role, location } = Astro.props as Prop
                 </a>
               ) : (
                 <a
-                  class="text-sm 2xl:text-xl text-base-900 hover:text-base-500 font-bold uppercase inline-block px-4 py-2"
+                  class="text-xs 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase inline-block px-4 py-2"
                   href={withBase(action.href)}
                 >
                   {action.label}

@@ -17,7 +17,7 @@ const { title, href, description, date, image, imageAlt = '', eyebrow } = Astro.
 
 const baseDate = typeof date === 'string' ? new Date(date) : date;
 
-const articleClass = 'group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start p-5 transition duration-300 ease-in-out hover:-translate-y-1 focus-within:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-border';
+const articleClass = 'group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start p-5 transition duration-300 ease-in-out hover:-translate-y-1 focus-within:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-border cursor-pointer';
 
 const isExternal = /^https?:\/\//.test(href) || href.startsWith('//');
 const aProps = { href, 'aria-label': `Ver ${title}`, ...(isExternal ? { rel: 'noopener noreferrer' } : {}) };
@@ -49,15 +49,15 @@ const aProps = { href, 'aria-label': `Ver ${title}`, ...(isExternal ? { rel: 'no
 
 		<div class="lg:col-span-2">
 			{eyebrow && <p class="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-accent)]">{eyebrow}</p>}
-			<h3 class="text-base 2xl:text-2xl text-[color:var(--color-primary)] font-bold uppercase">
+			<h3 class="text-sm 2xl:text-xl text-[color:var(--color-primary)] font-bold uppercase">
 				<span class="relative z-10">{title}</span>
 			</h3>
 
-			{description && <p class="text-sm 2xl:text-xl mt-1 text-[color-mix(in_srgb,var(--color-primary)_70%,var(--color-text-light)_30%)]">{description}</p>}
+			{description && <p class="text-xs 2xl:text-lg mt-1 text-[color-mix(in_srgb,var(--color-primary)_70%,var(--color-text-light)_30%)]">{description}</p>}
 		</div>
 
 		{baseDate && (
-			<p class="text-sm 2xl:text-xl text-base-600 lg:ml-auto">
+			<p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto">
 				<time datetime={baseDate.toISOString()}>
 					<FormattedDate date={baseDate} />
 				</time>

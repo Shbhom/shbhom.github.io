@@ -87,40 +87,47 @@ const baseUrl =
         >
             <div class="lg:sticky lg:top-24 lg:z-40 self-start">
                 <h2
-                    class="text-base 2xl:text-2xl text-base-900 font-bold uppercase"
+                    class="text-sm 2xl:text-xl text-base-900 font-bold uppercase"
                 >
                     {heading}
                 </h2>
             </div>
 
-            <div
-                class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8"
-            >
-                {
-                    visibleItems.map((item) => {
-                        const p = getProjectData(item) || {};
-                        const id = (item as any).id;
-                        const href = id ? withBase(`/projects/${id}/`) : p.link;
-                        const external = isExternal(href);
+            <div class="lg:col-span-2 flex flex-col md:flex-row gap-8">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8 flex-1"
+                >
+                    {
+                        visibleItems.map((item) => {
+                            const p = getProjectData(item) || {};
+                            const id = (item as any).id;
+                            const href = id ? withBase(`/projects/${id}/`) : p.link;
+                            const external = isExternal(href);
 
-                        return (
-                            <Card
-                                title={p.title}
-                                href={href}
-                                image={p.image}
-                                imageAlt={p.title}
-                                description={p.description}
-                                variant="project"
-                                cta="View project →"
-                            />
-                        );
-                    })
-                }
-                <Card
-                    title={viewAllLabel}
-                    href={`${baseUrl + (viewAllHref ?? '/projects/')}`}
-                    variant="project"
-                />
+                            return (
+                                <Card
+                                    title={p.title}
+                                    href={href}
+                                    image={p.image}
+                                    imageAlt={p.title}
+                                    description={p.description}
+                                    variant="project"
+                                    cta="View project →"
+                                />
+                            );
+                        })
+                    }
+                </div>
+                {viewAllHref && (
+                    <div class="flex items-start justify-end md:justify-end mt-8 md:mt-0">
+                        <a
+                            href={`${baseUrl + viewAllHref}`}
+                            class="text-sm 2xl:text-xl text-base-900 hover:text-base-500 font-bold uppercase transition duration-300 ease-in-out hover:-translate-y-1 inline-block"
+                        >
+                            {viewAllLabel}
+                        </a>
+                    </div>
+                )}
             </div>
         </div>
     </div>
