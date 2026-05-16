@@ -87,6 +87,13 @@ function isExternal(href: string) {
                                         item.title
                                     )}
                                 </h3>
+                                {item.datetime && (
+                                    <p class="text-xs 2xl:text-lg text-base-600 mt-1 mb-2 lg:hidden">
+                                        <time datetime={item.datetime}>
+                                            {item.dateLabel ?? item.datetime}
+                                        </time>
+                                    </p>
+                                )}
                                 {item.description && (
                                     <p class="text-xs 2xl:text-lg mt-1 text-base-600">
                                         {item.description}
@@ -102,7 +109,7 @@ function isExternal(href: string) {
                             </div>
 
                             {item.datetime && (
-                                <p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto">
+                                <p class="text-xs 2xl:text-lg text-base-600 lg:ml-auto hidden lg:block">
                                     <time datetime={item.datetime}>
                                         {item.dateLabel ?? item.datetime}
                                     </time>
