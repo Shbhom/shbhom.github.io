@@ -20,7 +20,18 @@ const isExternal = (path: string) => /^[a-z][a-z0-9+.-]*:/i.test(path) || path.s
 const { title, description, actions = [], role, location } = Astro.props as Props; 
 ---
 
-<section class="flex flex-col justify-between" style="min-height: calc(100vh - (var(--grid-cell) / 2));">
+<style>
+  .hero-section {
+    min-height: calc(100vh - (var(--grid-cell) / 2));
+  }
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: calc(100svh - (var(--grid-cell) / 2));
+    }
+  }
+</style>
+
+<section class="flex flex-col justify-between hero-section">
   <div class="grid gap-3 md:gap-4 max-w-3xl pb-6 md:pb-10">
     <div class="flex flex-col lg:flex-row lg:justify-between items-start gap-8">
       <div
